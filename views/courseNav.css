@@ -1,0 +1,72 @@
+body{
+    background-color: azure;
+    background-image: none;
+}
+
+.courseNavContent{
+    width: 100%;
+    height: auto;
+    min-height: 876px;
+}
+
+.courseNav-box{
+    display: flex;
+    
+}
+
+.courseNavBar{
+    border: 1px solid black;
+    background-color: aliceblue;
+    color: black;
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+    /* gap: 20px; */
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.section{
+    width: 100%;
+}
+
+.courseTitle{
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+#next-prev-btn{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+}
+
+.courseNav-btn{
+    cursor: pointer;
+    background-color: #3B71CA;
+    border-radius: 10px;
+}
+
+.video{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#courseNav-vid{
+    position: relative;
+}
+
+#courseNav-overview{
+    padding: 50px;
+}

@@ -1,0 +1,26 @@
+
+
+.addCourseForm-box{
+    margin: auto;
+    width: 50%;
+}
+
+.addCourseForm-heading{
+    color: azure;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    text-align: center;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.addCourseForm-box form{
+    margin: 20px auto;
+    padding: 30px;
+}
+
+#courseClose{
+    border: #007bff solid 1px;
+    padding: 8px;
+    border-radius: 5px;
+}

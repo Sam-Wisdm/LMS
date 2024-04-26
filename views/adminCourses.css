@@ -1,0 +1,50 @@
+
+
+.course-table{
+    margin: 100px;
+    width: 100%;
+}
+
+.addCourse-btn{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 10px;
+    color: azure;
+    font-size: 30px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-table-heading{
+    width: 100%;
+    text-align: center;
+    color: azure;
+    background-color: rgb(27, 12, 82);
+    padding: 10px 0;
+    font-size: 25px;
+}
+
+.course-table-content{
+    width: 100%;    
+    text-align: center;
+}
+
+.course-table-table{
+    width: 100%;
+    text-align: center;
+}
+
+.actionbtn{
+    background-color: darkgrey;
+}
+
+.addCourse-btn-a{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}

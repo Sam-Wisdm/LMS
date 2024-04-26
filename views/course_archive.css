@@ -1,0 +1,80 @@
+body{
+    background: none;
+}
+
+#course-arch-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.course-arch-cards{
+    width: 75%;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 500px 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.courseCard{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 10px 1px #8C8C8C;
+    border-radius: 15px;
+}
+
+.courseCardImg{
+    /* border: 1px solid black; */
+    background-color: aliceblue;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 250px;
+    border-radius: 15px 15px 0 0;
+}
+
+.courseCardContent{
+    padding: 15px;
+}
+
+.courseCardAuthor{
+    font-weight: 100;
+}
+
+.courseCardEnroll{
+    width: 100px;
+    height: 50px;
+    margin: 0 0 0 38%;
+    background-color: rgb(0, 153, 255);
+    color: azure;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.pagination{
+    display: flex;
+    gap: 10px;
+    margin: 50px auto -25px auto;
+}
+
+.pageStyle{
+    border: 1px solid black;
+    width: 45px;
+    height: 45px;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f9fd;
+    color: #4c51bf;
+    border: 1px solid rgb(0, 153, 255);
+    margin: 0 5px;
+    cursor: pointer;
+}

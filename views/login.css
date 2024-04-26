@@ -1,0 +1,14 @@
+body{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(94, 35, 117, 0.5), rgba(117, 34, 117, 0.5)), url(./images/banner1.jpg) no-repeat;
+}
+
+.LoginForm{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
