@@ -43,9 +43,6 @@ if ($_SESSION['is_login'] === false) {
                 $_SESSION['is_login'] = true;
                 $_SESSION['stuLogEmail'] = $stuemail;
                 echo json_encode(["success" => true, "message" => "Login Successful."]);
-                // // Redirect to the specified URL
-                // header("Location: http://localhost:8081/views/home.php");
-                // die(); // Terminates script execution
 
             } else {
                 $err['stuLogPassw'] = "Invalid Password.";

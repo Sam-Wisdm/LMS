@@ -1,5 +1,7 @@
 <?php
 include(dirname(__DIR__) . '/views/header.php');
+include('./controllers/checkDB.php');
+// checkDB();
 ?>
 <div class="banner">
   <!-- <div class="slider" id="slider">

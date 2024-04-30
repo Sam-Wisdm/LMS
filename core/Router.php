@@ -31,8 +31,8 @@ class Router {
             http_response_code(404);
             echo "404";
             // echo "<script>console.log('404')</script>";
-            // header("Location: http://localhost:8081/views/_404.php");
-            // exit;
+            header("Location: http://localhost:8081/views/_404.php");
+            exit;
         }
     }
 

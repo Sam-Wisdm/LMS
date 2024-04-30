@@ -28,7 +28,7 @@ if ($_SESSION['is_login']) {
         while ($table = $result->fetch_assoc()) {
             array_push($less_arr, $table);
         }
-        $cname = $less_arr[0]['course_name'];
+        // $cname = $less_arr[0]['course_name'];
         $sql_c = "SELECT * FROM course WHERE course_id = $cid";
         $result_c = $conn->query($sql_c);
         $row = $result_c->fetch_assoc();

@@ -10,7 +10,7 @@ function setCourseNavBar(){
             courseNavBarCont += `
                 <div class="section">
                     <a href="#">
-                        <div id="sectionTitle" onclick="setCourseNavContent(${lessObj.lesson_id})">
+                        <div class="sectionTitle" onclick="setCourseNavContent(${lessObj.lesson_id})">
                             <h4>${lessObj.lesson_name}</h4>
                         </div>  
                         <hr>

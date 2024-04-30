@@ -34,7 +34,8 @@ if($_SESSION['is_admin_login'] === true) {
         $sql = "SELECT * FROM course WHERE course_id = {$_REQUEST['checkid']}";
         $result = $conn->query($sql);
         $row_course = $result->fetch_assoc();
-        if (isset($_REQUEST['checkid']) && $_REQUEST['checkid'] == $row_course['course_id']) {
+        // isset($_REQUEST['checkid']) && $_REQUEST['checkid'] == $row_course['course_id']
+        if (count($row_course)) {
 
     ?>
 

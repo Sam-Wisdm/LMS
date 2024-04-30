@@ -63,7 +63,7 @@ function setCourseArchive(pgidx, courseArr) {
                                     <h3 class="courseCardHeading">${courseArr[i].course_title}</h3>
                                     <p class="courseCardDesc">${courseArr[i].course_desc}</p>
                                     <h4 class="courseCardAuthor"><i>Author :</i> <b>${courseArr[i].course_author}</b></h4>
-                                    <div class="courseCardStudEnrollCnt"><p>Total Students Enrolled : ${courseArr[i].course_stud_enroll_cnt} </p></div>
+                                    <!-- <div class="courseCardStudEnrollCnt"><p>Total Students Enrolled : ${courseArr[i].course_stud_enroll_cnt} </p></div> -->
                                     <button class="courseCardEnroll" onclick="explore(${courseArr[i].course_id})">Explore</button>
                                 </div>
                             </div>`;
