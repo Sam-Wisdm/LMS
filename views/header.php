@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
 
           <?php
@@ -57,7 +57,7 @@
                   <a class="nav-link" href="#"  data-bs-toggle="modal" data-bs-target="#StudLoginModal">Sign in</a>
                 </li>
                 <li class="nav-item navbar-nav ml-auto mb-2 mb-lg-0">
-                  <a class="nav-link active" aria-current="page" href="./adminlogin.php" data-bs-toggle="modal" data-bs-target="#AdminLoginModal">Admin Login</a>
+                  <a class="nav-link" aria-current="page" href="./adminlogin.php" data-bs-toggle="modal" data-bs-target="#AdminLoginModal">Admin Login</a>
                 </li>
               ';
           }

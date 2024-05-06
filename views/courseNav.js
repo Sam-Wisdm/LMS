@@ -10,7 +10,7 @@ function setCourseNavBar(){
             courseNavBarCont += `
                 <div class="section">
                     <a href="#">
-                        <div class="sectionTitle" onclick="setCourseNavContent(${lessObj.lesson_id})">
+                        <div class="sectionTitle" id="${lessObj.lesson_id}" onclick="setCourseNavContent(${lessObj.lesson_id})">
                             <h4>${lessObj.lesson_name}</h4>
                         </div>  
                         <hr>
@@ -25,6 +25,12 @@ setCourseNavBar();
 
 function setCourseNavContent(lessonID){
     // console.log(lessonID)
+    let navTitle = document.getElementById(lessonID);
+    let navTitleClass = document.getElementsByClassName('sectionTitle');
+    for(let i=0; i<navTitleClass.length; i++) {
+        navTitleClass[i].style.color = "rgb(156, 151, 151)";
+    }
+    navTitle.style.color = "black";
     let courseNavVid = document.getElementById('courseNav-vid');
     let lessonDescEle = document.getElementById('courseNav-overview');
     let lessonDesc = ``;

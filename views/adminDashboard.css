@@ -12,15 +12,6 @@ body{
     min-height: 932px;
 }
 
-.admindashboard-nav{
-    font-size: 30px;
-}
-
-.admindashboard-nav h1 a{
-    text-decoration: none;
-    color: azure;
-}
-
 .admindashboardcontent-nav ul{
     display: flex;
     flex-direction: column;
@@ -35,6 +26,11 @@ body{
     text-decoration: none;
     color: azure; 
     font-size: 25px;
+}
+
+a:hover{
+    transform: scale(1.09) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    font-weight: bold;
 }
 
 .admindashboardcontent{
@@ -129,4 +125,9 @@ body{
 
 .course-table-table{
     width: 100%;
+}
+
+.myactive{
+    font-weight: bolder;
+    text-shadow: 1px 1px cornflowerblue;
 }

@@ -28,7 +28,7 @@
   </footer>
 
   <!-- course Archive page js -->
-  <!-- <script src="./views/courseArch.js"></script> -->
+  <script src="<?php dirname(__DIR__) ?>/views/courseArch.js"></script>
 
   <!-- Ajax Call js -->
   <script src="<?php dirname(__DIR__) ?>/controllers/ajaxRequest.js"></script>

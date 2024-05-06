@@ -1,42 +1,28 @@
 var pageNo = 0;
 var courseArr = [];
-var filterPosts = [];
-// fetch('./slide.json')
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(data => {
-//         courseArr = data;
-//         if (document.getElementById('slider') != null) {
-//             set_slide()
-//         }
-//         else if (document.getElementById('course-arch-cards') != null) {
-//             filterPosts = courseArr;
-//             setCourseArchive(0, courseArr);
-//             numOfPages(courseArr, pageNo);
-//             selectPageBgColor(pageNo, courseArr);
-//         }
-//     });
+var courseCnt = 0;
 
 function getCourseArr() {
-
+    console.log("ajax called");
     $.ajax({
         url: '../controllers/ContentController.php',
         method: 'POST',
         dataType: 'json',
         data: {
-            getCourseArrForRendering : true
+            getCourseArrForRendering : true,
+            pageNo: pageNo
         },
         success: function (response) {
             console.log(response);
             if(response.success){
                 console.log("Course table Fetched");
                 courseArr = response.courseArr;
-                filterPosts = courseArr;
-                console.log(courseArr)
-                setCourseArchive(0, courseArr);
-                numOfPages(courseArr, pageNo);
-                selectPageBgColor(pageNo, courseArr);
+                courseCnt = response.courseCnt
+                // filterPosts = courseArr;
+                console.log(courseArr);
+                setCourseArchive();
+                numOfPages();
+                selectPageBgColor(pageNo);
 
             } else {
                 console.log("Unable to Fetch Course Table");
@@ -45,14 +31,14 @@ function getCourseArr() {
         }
     });
 }
-getCourseArr();
+// getCourseArr();
 
-function setCourseArchive(pgidx, courseArr) {
+function setCourseArchive() {
     let courseDiv = document.getElementById('course-arch-cards');
     let courseGrid = ``;
 
-    if (courseArr.length) {
-        for (let i = pgidx * 4; i < pgidx * 4 + 4; i++) {
+    if (courseCnt) {
+        for (let i = 0; i < 4; i++) {
             if (i >= courseArr.length) break;
 
             courseGrid += `<div class="courseCard">
@@ -73,28 +59,32 @@ function setCourseArchive(pgidx, courseArr) {
 }
 
 function nextPg(pgidx) {
-    if (pgidx + 1 < courseArr.length) {
+    if (pgidx + 1 < courseCnt) {
+        getCourseArr();
         pageNo = pgidx + 1;
-        setCourseArchive(pageNo, filterPosts);
-        selectPageBgColor(pageNo, filterPosts);
+        setCourseArchive();
+        selectPageBgColor(pageNo);
     }
 }
 
 function prevPg(pgidx) {
     if (pgidx > 0) {
+        getCourseArr();
         pageNo = pgidx - 1;
-        setCourseArchive(pageNo, filterPosts);
-        selectPageBgColor(pageNo, filterPosts);
+        setCourseArchive();
+        selectPageBgColor(pageNo);
     }
 }
 
 function changePage(pgidx) {
-    setCourseArchive(pgidx, filterPosts);
-    selectPageBgColor(pgidx, filterPosts);
+    pageNo = pgidx;
+    getCourseArr();
+    setCourseArchive();
+    selectPageBgColor(pgidx);
 }
 
-function numOfPages(courseArr, pgidx) {
-    let total_pages = Math.ceil(courseArr.length / 4);
+function numOfPages() {
+    let total_pages = Math.ceil(courseCnt / 4);
     let pg = ``;
     // pg += `<div id="prev-pg" onclick="prevPg(${pgidx})">
     //             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="black">
@@ -112,15 +102,15 @@ function numOfPages(courseArr, pgidx) {
     document.getElementById('pagination').innerHTML = pg;
 }
 
-function selectPageBgColor(pgidx, courseArr) {
-    if (courseArr.length > 0) {
+function selectPageBgColor(pgidx) {
+    if (courseCnt > 0) {
         let selectedPage = document.getElementById(`page${pgidx}`);
         if (selectedPage) {
             console.log(selectedPage);
             selectedPage.style.backgroundColor = 'rgb(0, 153, 255)';
             selectedPage.style.color = 'azure';
 
-            let total_pages = Math.ceil(courseArr.length / 4);
+            let total_pages = Math.ceil(courseCnt / 4);
             for (let i = 0; i < total_pages; i++) {
                 if (i === pgidx) continue;
                 let otherPage = document.getElementById(`page${i}`);
@@ -156,7 +146,8 @@ function search() {
         }
     })
 
-    setCourseArchive(pageNo, filterPosts);
-    numOfPages(filterPosts, pageNo);
-    selectPageBgColor(pageNo, filterPosts);
+    getCourseArr();
+    setCourseArchive();
+    numOfPages();
+    selectPageBgColor(pageNo);
 }

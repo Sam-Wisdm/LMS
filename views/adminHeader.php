@@ -11,19 +11,19 @@
 </head>
 <body>
     <nav class="admin-nav">
-        <div class="admindashboard-nav">
-            <h1><a href="./adminDashboard.php">Admin Dashboard</a></h1>
-        </div>
         <div class="admindashboardcontent-nav">
             <ul>
                 <li>
-                    <a href="../views/adminCourses.php">Courses</a>
+                    <a href="./adminDashboard.php" <?php if(preg_match_all('/adminDashboard.php/', $_SERVER['REQUEST_URI'])) {echo 'class="myactive"';} ?>>Admin Dashboard</a>
                 </li>
                 <li>
-                    <a href="./adminLesson.php">Lessons</a>
+                    <a href="../views/adminCourses.php" <?php if(preg_match_all('/adminCourses.php/', $_SERVER['REQUEST_URI'])) {echo 'class="myactive"';} ?>>Courses</a>
                 </li>
                 <li>
-                    <a href="./adminStudents.php">Students</a>
+                    <a href="./adminLesson.php" <?php if(preg_match_all('/adminLesson.php/', $_SERVER['REQUEST_URI'])) {echo 'class="myactive"';} ?>>Lessons</a>
+                </li>
+                <li>
+                    <a href="./adminStudents.php" <?php if(preg_match_all('/adminStudents.php/', $_SERVER['REQUEST_URI'])) {echo 'class="myactive"';} ?>>Students</a>
                 </li>
                 <!-- <li>
                     <a href="../views/adminChangePass.php">Change Password</a>

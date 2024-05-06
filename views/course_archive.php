@@ -20,6 +20,7 @@
 </div>
 
 <script src="./courseArch.js"></script>
+<?php echo "<script>getCourseArr();</script>"; ?>
 <?php
     } else {
         echo "<script>location.href='/';</script>";

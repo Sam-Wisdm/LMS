@@ -34,6 +34,7 @@ function checkDB() {
                 admin_email varchar(255) NOT NULL UNIQUE,
                 admin_pass varchar(255) NOT NULL
             )";
+            $sql_add_admin = "INSERT INTO admin (admin_name, admin_email, admin_pass) VALUES ('admin', 'admin@gmail.com', 'admin')";
 
             $sql_create_course = "CREATE TABLE course (
                 course_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -64,6 +65,7 @@ function checkDB() {
             )";
 
             if($conn->query($sql_create_admin) && $conn->query($sql_create_course) && $conn->query($sql_create_lesson) && $conn->query($sql_create_student)) {
+                // $conn->query($sql_add_admin);
                 echo json_encode(["success" => true, "message" => "All tables created"]);
             } else {
                 echo json_encode(["success" => false, "message" => "Failed to create tables"]);
