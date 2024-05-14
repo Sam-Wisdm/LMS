@@ -9,11 +9,13 @@ $router = new Router();
 
 // $router->get('/', 'home');                  // get(request, response)
 
-// $router->get('/register', 'register');
-// $router->post('/register', 'register');
+if(!isset($_SESSION)) {
+    session_start();
+}
 
-// $router->get('/login', 'login');
-// $router->post('/login', 'login');
+if($_SESSION['is_admin_login'] === true) {
+    header("Location: http://localhost:{$_SERVER['SERVER_PORT']}/views/adminDashboard.php");
+}
 
 $router->get('/index.php', function() {
     include './views/home.php'; // Render home.php

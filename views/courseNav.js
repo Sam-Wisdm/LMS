@@ -20,6 +20,7 @@ function setCourseNavBar(){
         }
     }
     courseNavBar.innerHTML = courseNavBarCont;
+    setCourseNavContent(lessonArr[0].lesson_id);
 }
 setCourseNavBar();
 
